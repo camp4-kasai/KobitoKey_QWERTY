@@ -26,11 +26,6 @@
             bindings = <&kp ESC>;
         };
 
-        combo_mb3 {
-            bindings = <&mkp MCLK>;
-            key-positions = <6 7>;
-        };
-
         combo_colon {
             bindings = <&kp COLON>;
             key-positions = <14 24>;
@@ -50,6 +45,16 @@
             bindings = <&kp PERIOD>;
             key-positions = <5 15>;
         };
+
+        combo_lt4_L {
+            bindings = <&lt 4 LEFT_GUI>;
+            key-positions = <33 34>;
+        };
+
+        combo_lt4_R {
+            bindings = <&lt 4 LEFT_GUI>;
+            key-positions = <35 36>;
+        };
     };
 
     keymap {
@@ -57,10 +62,10 @@
 
         default_layer {
             bindings = <
-&kp Q            &kp W         &kp E             &kp R               &kp T      &kp Y            &kp U                &kp I              &kp O          &kp P
-&kp A            &kp S         &mt LEFT_SHIFT D  &mt LEFT_CONTROL F  &kp G      &kp H            &mt RIGHT_CONTROL J  &mt RIGHT_SHIFT K  &kp L          &kp MINUS
-&kp Z            &kp X         &kp C             &kp V               &kp B      &kp N            &kp M                &kp COLON          &kp SEMICOLON  &kp SLASH
-&mt LSHFT LANG2  &kp LEFT_GUI  &kp LEFT_ALT      &lt 1 SPACE         &lt 2 TAB  &lt 2 BACKSPACE  &lt 1 ENTER          &kp RIGHT_ALT      &kp RIGHT_GUI  &mt RIGHT_SHIFT LANG1
+&kp Q            &kp W             &kp E             &kp R               &kp T      &kp Y            &kp U                &kp I              &kp O              &kp P
+&kp A            &kp S             &mt LEFT_SHIFT D  &mt LEFT_CONTROL F  &kp G      &kp H            &mt RIGHT_CONTROL J  &mt RIGHT_SHIFT K  &kp L              &kp MINUS
+&kp Z            &kp X             &kp C             &kp V               &kp B      &kp N            &kp M                &kp COMMA          &kp PERIOD         &kp SLASH
+&mt LSHFT LANG2  &kp LEFT_CONTROL  &kp LEFT_ALT      &lt 1 SPACE         &lt 2 TAB  &lt 2 BACKSPACE  &lt 1 ENTER          &kp RIGHT_ALT      &kp RIGHT_CONTROL  &mt RIGHT_SHIFT LANG1
             >;
         };
 
@@ -69,7 +74,7 @@
             bindings = <
 &kp CARET    &kp TILDE     &kp PERCENT           &kp AMPERSAND           &kp DOUBLE_QUOTES  &kp LS(LA(LEFT))  &kp LC(LEFT)      &kp UP    &kp RC(RIGHT)  &kp RS(RA(RIGHT))
 &kp AT_SIGN  &kp DOLLAR    &mt LEFT_SHIFT MINUS  &mt LEFT_CONTROL EQUAL  &kp SINGLE_QUOTE   &kp HOME          &kp LEFT          &kp DOWN  &kp RIGHT      &kp END
-&kp HASH     &kp ASTERISK  &kp PIPE              &kp EXCLAMATION         &kp GRAVE          &kp COMMA         &kp PERIOD        &trans    &trans         &kp BACKSLASH
+&kp HASH     &kp ASTERISK  &kp PIPE              &kp EXCLAMATION         &kp GRAVE          &kp COLON         &kp SEMICOLON     &trans    &trans         &kp BACKSLASH
 &trans       &trans        &trans                &kp RC(LEFT_GUI)        &trans             &kp DELETE        &kp RC(LEFT_GUI)  &trans    &trans         &trans
             >;
         };
@@ -87,10 +92,10 @@
         MOUSE {
             label = "MOUSE";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &to 0   &to 0   &trans    &trans    &trans    &trans
             >;
         };
 
