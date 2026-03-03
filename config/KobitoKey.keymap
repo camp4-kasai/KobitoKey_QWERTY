@@ -40,34 +40,34 @@
 
         default_layer {
             bindings = <
-&kp Q            &kp W         &kp E                   &kp R               &kp T      &kp Y            &kp U               &kp I                    &kp O      &kp P
-&kp A            &kp S         &mt LEFT_SHIFT D        &mt LEFT_CONTROL F  &kp G      &kp H            &mt LEFT_CONTROL J  &mt RIGHT_SHIFT K        &kp L      &kp MINUS
-&mt LEFT_ALT Z   &kp X         &kp C                   &kp V               &kp B      &kp N            &kp M               &mkp MB1                 &mkp MB2   &mt RIGHT_ALT SLASH
-&mt LSHFT LANG1  &kp LEFT_GUI  &mt LEFT_CONTROL LANG1  &lt 1 SPACE         &lt 2 TAB  &lt 2 BACKSPACE  &lt 1 ENTER         &mt RIGHT_CONTROL LANG2  &kp RSHFT  &mt RIGHT_SHIFT LANG2
+&kp Q            &kp W           &kp E                   &kp R               &kp T      &kp Y            &kp U               &kp I                    &kp O      &kp P
+&kp A            &kp S           &mt LEFT_SHIFT D        &mt LEFT_CONTROL F  &kp G      &kp H            &mt LEFT_CONTROL J  &mt RIGHT_SHIFT K        &kp L      &kp MINUS
+&mt LEFT_ALT Z   &kp X           &kp C                   &kp V               &kp B      &kp N            &kp M               &mkp MB1                 &mkp MB2   &mt RIGHT_ALT SLASH
+&mt LSHFT LANG1  &lt 4 LEFT_GUI  &mt LEFT_CONTROL LANG1  &lt 1 SPACE         &lt 2 TAB  &lt 2 BACKSPACE  &lt 1 ENTER         &mt RIGHT_CONTROL LANG2  &lt 4 ESC  &mt RIGHT_SHIFT LANG2
             >;
         };
 
-        layer1 {
+        SYMBOL_ARROW {
+            label = "SYMBOL_ARROW";
+            bindings = <
+&kp CARET    &kp TILDE     &kp PERCENT  &kp AMPERSAND    &kp DOUBLE_QUOTES  &kp LS(LA(LEFT))  &kp LC(LEFT)   &kp UP     &kp RC(RIGHT)  &kp RS(RA(RIGHT))
+&kp AT_SIGN  &kp DOLLAR    &kp MINUS    &kp EQUAL        &kp SINGLE_QUOTE   &kp HOME          &kp LEFT       &kp DOWN   &kp RIGHT      &kp END
+&kp HASH     &kp ASTERISK  &kp PIPE     &kp EXCLAMATION  &kp GRAVE          &kp COLON         &kp SEMICOLON  &kp COMMA  &kp PERIOD     &kp BACKSLASH
+&trans       &trans        &trans       &trans           &trans             &kp DELETE        &trans         &trans     &trans         &trans
+            >;
+        };
+
+        NUMBER {
             label = "NUMBER";
             bindings = <
-&kp CARET    &kp TILDE     &kp PERCENT  &kp AMPERSAND    &kp DOUBLE_QUOTES  &kp LS(LA(LEFT))  &kp LC(LEFT)   &kp UP    &kp RC(RIGHT)  &kp RS(RA(RIGHT))
-&kp AT_SIGN  &kp DOLLAR    &kp MINUS    &kp EQUAL        &kp SINGLE_QUOTE   &kp HOME          &kp LEFT       &kp DOWN  &kp RIGHT      &kp END
-&kp HASH     &kp ASTERISK  &kp PIPE     &kp EXCLAMATION  &kp GRAVE          &kp COLON         &kp SEMICOLON  &kp LBKT  &kp RBKT       &kp BACKSLASH
-&trans       &trans        &trans       &trans           &trans             &kp DELETE        &trans         &trans    &trans         &trans
+&trans  &trans  &trans  &kp LESS_THAN         &kp GREATER_THAN       &kp PERCENT      &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp KP_PLUS
+&trans  &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp COLON        &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp KP_MINUS
+&trans  &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp KP_MULTIPLY  &kp KP_N1  &kp KP_N2  &kp KP_N3   &kp KP_SLASH
+&trans  &trans  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans           &kp KP_N0  &kp KP_N0  &kp KP_DOT  &kp KP_DOT
             >;
         };
 
-        layer2 {
-            label = "FUNCTION";
-            bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp PERCENT      &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS
-&trans        &trans        &trans        &trans        &bt BT_CLR      &kp COLON        &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS
-&trans        &trans        &trans        &trans        &bt BT_CLR_ALL  &kp KP_MULTIPLY  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_SLASH
-&trans        &trans        &trans        &trans        &trans          &trans           &kp KP_N0  &kp KP_N0  &trans     &trans
-            >;
-        };
-
-        layer3 {
+        MOUSE {
             label = "MOUSE";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans
@@ -77,13 +77,13 @@
             >;
         };
 
-        layer_4 {
+        FUNCTION {
             label = "FUNCTION";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F1   &kp F2   &kp F3  &kp F4  &kp F5
-&trans        &trans        &trans        &trans        &bt BT_CLR      &kp F6   &kp F7   &kp F8  &kp F9  &kp F10
-&trans        &trans        &trans        &trans        &bt BT_CLR_ALL  &kp F11  &kp F12  &trans  &trans  &trans
-&trans        &trans        &trans        &trans        &trans          &kp DEL  &trans   &trans  &trans  &trans
+&kp F1  &kp F2   &kp F3          &kp F4        &kp PAGE_UP      &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bt BT_SEL 4
+&kp F5  &kp F6   &kp F7          &kp F8        &kp PAGE_DOWN    &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3   &bt BT_DISC 4
+&kp F9  &kp F10  &kp F11         &kp F12       &kp PRINTSCREEN  &trans         &trans         &trans         &trans          &trans
+&trans  &trans   &kp KP_NUMLOCK  &kp CAPSLOCK  &trans           &trans         &trans         &trans         &bt BT_CLR_ALL  &bt BT_CLR
             >;
         };
     };
