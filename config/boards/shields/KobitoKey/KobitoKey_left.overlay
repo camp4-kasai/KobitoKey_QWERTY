@@ -37,7 +37,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <200>; /* センサー感度 */
+        cpi = <300>; /* センサー感度 */
 
 
         evt-type = <INPUT_EV_REL>;
@@ -75,7 +75,6 @@
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;
     };
 
-/* オートマウスレイヤー設定（コメントアウト）
 / {
   /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
     compatible = "zmk,input-processor-temp-layer";
@@ -83,15 +82,14 @@
     require-prior-idle-ms = <350>;
   };
 };
-*/
+
 &tb_right_listener {
     status = "okay";
 
     input-processors =
-        <&sensor_rotation_right>;
-        /* <&zip_temp_layer 3 5000>; */ /* オートマウスレイヤーの指定とトラボ操作及びマウスボタン押下後に滞留する時間 */
+        <&sensor_rotation_right>,
+        <&zip_temp_layer 3 5000>; /* オートマウスレイヤーの指定とトラボ操作及びマウスボタン押下後に滞留する時間 */
 };
-/* オートマウスレイヤー コメントアウト
 &zip_temp_layer {
     excluded-positions = <
         6
@@ -104,4 +102,3 @@
         39
     >;
 };
-*/
