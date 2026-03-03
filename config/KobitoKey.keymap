@@ -8,28 +8,30 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_eisu {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LANG2>;
-        };
-
-        combo_kana {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&kp LANG1>;
-        };
-
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
 
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
+        mb3 {
+            bindings = <&mkp MB3>;
+            key-positions = <27 28>;
+        };
+
+        mb1 {
+            bindings = <&mkp MB1>;
+            key-positions = <6 16>;
+        };
+
+        mb2 {
+            bindings = <&mkp MB2>;
+            key-positions = <7 17>;
+        };
+
+        mb3-2 {
+            bindings = <&mkp MB3>;
+            key-positions = <7 6>;
         };
     };
 
@@ -38,40 +40,50 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W     &kp E     &kp R        &kp T      &kp Y     &kp U        &kp I      &kp O      &kp P
-&kp A      &kp S     &kp D     &kp F        &kp G      &kp H     &kp J        &kp K      &kp L      &kp SEMI
-&kp Z      &kp X     &kp C     &kp V        &kp B      &kp N     &kp M        &kp COMMA  &kp DOT    &kp APOS
-&kp LSHFT  &kp LALT  &kp LCMD  &lt 2 SPACE  &kp LCTRL  &kp BSPC  &lt 1 ENTER  &kp RSHFT  &kp RSHFT  &mt LALT SLASH
+&kp Q            &kp W         &kp E                   &kp R               &kp T      &kp Y            &kp U               &kp I                    &kp O      &kp P
+&kp A            &kp S         &mt LEFT_SHIFT D        &mt LEFT_CONTROL F  &kp G      &kp H            &mt LEFT_CONTROL J  &mt RIGHT_SHIFT K        &kp L      &kp MINUS
+&mt LEFT_ALT Z   &kp X         &kp C                   &kp V               &kp B      &kp N            &kp M               &mkp MB1                 &mkp MB2   &mt RIGHT_ALT SLASH
+&mt LSHFT LANG1  &kp LEFT_GUI  &mt LEFT_CONTROL LANG1  &lt 1 SPACE         &lt 2 TAB  &lt 2 BACKSPACE  &lt 1 ENTER         &mt RIGHT_CONTROL LANG2  &kp RSHFT  &mt RIGHT_SHIFT LANG2
             >;
         };
 
         layer1 {
             label = "NUMBER";
             bindings = <
-&kp N0     &kp N1  &kp N2  &kp N3     &trans  &kp MINUS  &trans     &kp UP    &trans     &trans
-&kp EQUAL  &kp N4  &kp N5  &kp N6     &trans  &kp PLUS   &kp LEFT   &kp DOWN  &kp RIGHT  &trans
-&trans     &kp N7  &kp N8  &kp N9     &trans  &kp ASTRK  &kp SLASH  &kp LBKT  &kp RBKT   &trans
-&trans     &trans  &trans  &kp LSHFT  &trans  &trans     &trans     &trans    &trans     &trans
+&kp CARET    &kp TILDE     &kp PERCENT  &kp AMPERSAND    &kp DOUBLE_QUOTES  &kp LS(LA(LEFT))  &kp LC(LEFT)   &kp UP    &kp RC(RIGHT)  &kp RS(RA(RIGHT))
+&kp AT_SIGN  &kp DOLLAR    &kp MINUS    &kp EQUAL        &kp SINGLE_QUOTE   &kp HOME          &kp LEFT       &kp DOWN  &kp RIGHT      &kp END
+&kp HASH     &kp ASTERISK  &kp PIPE     &kp EXCLAMATION  &kp GRAVE          &kp COLON         &kp SEMICOLON  &kp LBKT  &kp RBKT       &kp BACKSLASH
+&trans       &trans        &trans       &trans           &trans             &kp DELETE        &trans         &trans    &trans         &trans
             >;
         };
 
         layer2 {
             label = "FUNCTION";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F1   &kp F2   &kp F3  &kp F4  &kp F5
-&trans        &trans        &trans        &trans        &bt BT_CLR      &kp F6   &kp F7   &kp F8  &kp F9  &kp F10
-&trans        &trans        &trans        &trans        &bt BT_CLR_ALL  &kp F11  &kp F12  &trans  &trans  &trans
-&trans        &trans        &trans        &trans        &trans          &kp DEL  &trans   &trans  &trans  &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp PERCENT      &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS
+&trans        &trans        &trans        &trans        &bt BT_CLR      &kp COLON        &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS
+&trans        &trans        &trans        &trans        &bt BT_CLR_ALL  &kp KP_MULTIPLY  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_SLASH
+&trans        &trans        &trans        &trans        &trans          &trans           &kp KP_N0  &kp KP_N0  &trans     &trans
             >;
         };
 
         layer3 {
             label = "MOUSE";
             bindings = <
-&trans     &trans  &trans    &trans    &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans     &trans  &trans    &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&trans     &trans  &trans    &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&kp LSHFT  &trans  &kp LCMD  &kp LALT  &to 0   &trans  &trans    &trans    &to 0     &kp RALT
+&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans
+&trans  &trans  &trans  &to 0   &to 0   &to 0   &to 0     &trans    &trans  &trans
+            >;
+        };
+
+        layer_4 {
+            label = "FUNCTION";
+            bindings = <
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F1   &kp F2   &kp F3  &kp F4  &kp F5
+&trans        &trans        &trans        &trans        &bt BT_CLR      &kp F6   &kp F7   &kp F8  &kp F9  &kp F10
+&trans        &trans        &trans        &trans        &bt BT_CLR_ALL  &kp F11  &kp F12  &trans  &trans  &trans
+&trans        &trans        &trans        &trans        &trans          &kp DEL  &trans   &trans  &trans  &trans
             >;
         };
     };
