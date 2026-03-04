@@ -55,6 +55,11 @@
             bindings = <&lt 4 LEFT_GUI>;
             key-positions = <35 36>;
         };
+
+        combo_mo2 {
+            bindings = <&mo 2>;
+            key-positions = <5 6 7>;
+        };
     };
 
     keymap {
@@ -92,10 +97,10 @@
         MOUSE {
             label = "MOUSE";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &to 0   &to 0   &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &mkp MCLK  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &to 0   &to 0      &trans     &trans     &trans  &trans
             >;
         };
 
