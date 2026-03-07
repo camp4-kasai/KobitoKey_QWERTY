@@ -55,6 +55,11 @@
             bindings = <&lt 4 LEFT_GUI>;
             key-positions = <35 36>;
         };
+
+        to_0 {
+            bindings = <&to 0>;
+            key-positions = <6 7 8>;
+        };
     };
 
     keymap {
@@ -95,7 +100,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &mkp MCLK  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans
-&trans  &trans  &trans  &trans  &to 0   &to 0   &trans     &trans     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans
             >;
         };
 
